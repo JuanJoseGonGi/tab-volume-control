@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Audio Controller",
+  "version": "1.0",
+  "description": "Control audio for individual tabs",
+  "icons": {
+    "48": "icons/icon_48.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "tabCapture"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon_48.png",
+    "default_popup": "popup.html",
+    "default_title": "Tab Audio Controller"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  }
+}
